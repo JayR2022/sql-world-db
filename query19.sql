@@ -1,6 +1,6 @@
 /* What is the most common government form ? */
-SELECT 
-	DISTINCT GovernmentForm,
-	COUNT(DISTINCT GovernmentForm) AS Column3,
+SELECT GovernmentForm, COUNT(GovernmentForm)
 FROM world.country
-ORDER BY GovernmentForm ASC;
+GROUP BY GovernmentForm
+ORDER BY Count(GovernmentForm) DESC
+lIMIT 5; 
